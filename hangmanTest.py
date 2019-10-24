@@ -51,8 +51,9 @@ frameList = ['''
 	========
 ''']
 
-print(frameList[misses])
+print(frameList[0])
 
+score = 0
 
 from random import choice 
 word = choice(["Donze", "Code", "Hoco", "Coding", "Dancing" ])
@@ -61,13 +62,15 @@ for letter in word:
 	out = out + "_"
 print("Guess a letter", out)
 
-guess = input()
 
-if guess in word:
-	print("Good guess")
-	repeat
-else:
-	print("Not close at all")
+while score < 7:
+	guess = input()
+	print(frameList[score])
+	if guess in word:
+		print("Good guess")
+	
+	else:
+		print("Not close at all")
+		score = score + 1
 
-print(word[len(word + 1)])
-
+print(input(letter))
